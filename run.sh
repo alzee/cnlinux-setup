@@ -33,15 +33,15 @@ do
         echo Try to build from source...
         pushd $i 2> /dev/null || echo $i dir not found ; continue
         echo Building $i...
-        . build_$i.sh
+        . build.sh
         popd
     fi
 
     # Post install setup
-    if [ -f $i/setup_$i.sh ]; then
+    if [ -f $i/setup.sh ]; then
         pushd $i 2> /dev/null || echo $i dir not found ; continue
         echo Running post setup for $i...
-        . setup_$i.sh
+        . setup.sh
         popd
     fi
 done
