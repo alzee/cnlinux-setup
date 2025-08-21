@@ -25,4 +25,5 @@
     * 包管理为`dnf`的系统
 
 ### TODO
-    * 适用于`Debian` base（apt）的国产系统
+    * 适用于多数`Debian` base（apt）的国产系统
+    * 适用于多数`Fedora` base（dnf）的国产系统
