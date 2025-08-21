@@ -7,7 +7,8 @@
 ############### Functions ###############
 
 ############### Main Part ###############
-tar=screen-4.9.1.tar.gz
+
+tar=$(echo screen-*.tar.*)
 
 tar xf $tar
 

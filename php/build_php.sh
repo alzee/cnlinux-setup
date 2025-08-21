@@ -8,7 +8,7 @@
 
 ############### Main Part ###############
 
-tar=php-8.4.11.tar.gz
+tar=$(echo php-*.tar.*)
 
 tar xf $tar
 

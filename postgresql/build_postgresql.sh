@@ -8,7 +8,7 @@
 
 ############### Main Part ###############
 
-tar=postgresql-17.6.tar.bz2
+tar=$(echo postgresql-*.tar.*)
 
 tar xf $tar
 

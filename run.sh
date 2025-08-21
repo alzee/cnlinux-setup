@@ -15,7 +15,7 @@ mv ash-master ~/.ash
 rm ash.zip
 
 echo Install tools...
-sudo dnf install flex bison httpd readline-devel
+sudo dnf install -y flex bison httpd readline-devel
 
 echo Building screen...
 pushd screen/
