@@ -2,7 +2,7 @@
 
 国产操作系统的环境配置自动化。
 
-### 逻辑
+### How does it work?
 1. 将所需软件包写入`pkgs`，每行一个，如：
     ```
     flex
@@ -36,6 +36,11 @@
   通用版本在这里[placeholder](https://github.com/alzee)。两个项目基本相同，但由于国产操作系统的魔改，不打算将其纳入通用版本，故独立存在。  
   比如通用发行版可以通过`/etc/os-release`轻松获取发行版名称、版本号等，从而选择使用相应的包管理、仓库、配置文件路径等。国产操作系统则相对混乱，需额外添加逻辑。
 
+### Plan
+* 适用于多数`Debian` based（apt）的国产系统
+* 适用于多数`Fedora` based（dnf）的国产系统
+
 ### TODO
-* 适用于多数`Debian` base（apt）的国产系统
-* 适用于多数`Fedora` base（dnf）的国产系统
+* 同一软件的不同名称：如`postgresql`在`Fedora`仓库里包名为`postgresql-server`，在`Debian`仓库则叫`postgresql`；`Fedora`中叫`redis`，`Debian`中则叫`redis-server`。两个解决思路：
+    * `pkgs`中的行写为`redis|redis-server`，逐个尝试
+    * 将包管理安装方式也写入`install.sh`，写入逻辑
