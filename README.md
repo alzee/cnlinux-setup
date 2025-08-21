@@ -1,11 +1,29 @@
 # Kylin V10 (银河麒麟) 环境配置
 
 ### 目标
-该脚本用于内网（无互联网）环境下的自动化系统环境配置，包括：
+该脚本用于内网（无互联网）环境下的自动化系统环境配置
 * 编译安装:
     * screen 4.9.1
     * php 8.4
     * postgressql 17
+
+### 用法
+1. 将所需软件包写入`pkgs`，每行一个，如：
+    ```
+    flex
+    bison
+    readline-devel
+    httpd
+    screen
+    php
+    postgresql
+    ```
+1. 运行`run.sh`，该脚本将：
+    * 逐个安装`pkgs`中软件包
+    * 优先尝试从专网中仓库安装
+    * 若从仓库安装失败（如没有该软件包），则尝试运行编译安装脚本
+    * 安装完成，执行`Post install`配置脚本
+    * 每个软件包可有一个名称对应的目录，编译安装脚本和配置脚本位于该目录下
 
 * 适用版本
     * Kylin Linux Advanced Server V10 (Sword) 银河麒麟高级服务器操作系统V10。kernel: 4.19.90
