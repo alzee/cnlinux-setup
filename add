@@ -1,0 +1,23 @@
+#!/bin/bash
+#
+# vim:ft=sh
+
+############### Variables ###############
+
+############### Functions ###############
+
+############### Main Part ###############
+
+if [ -z "$1" ]; then
+    echo Create dir for package
+    echo Usage:
+    echo 'add <package_name>'
+    exit
+fi
+
+mkdir $1
+
+cd $1
+
+touch build.sh setup.sh
+chmod +x build.sh setup.sh
