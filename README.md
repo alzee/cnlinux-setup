@@ -20,9 +20,8 @@
     1. 安装完成，执行`Post install`配置脚本
     1. 每个软件包可有一个名称对应的目录，编译安装脚本和配置脚本位于该目录下
 
-* 适用版本
+* 测试版本
     * Kylin Linux Advanced Server V10 (Sword) 银河麒麟高级服务器操作系统V10。kernel: 4.19.90
-    * 包管理为`dnf`的系统
 
 ### TODO
     * 适用于多数`Debian` base（apt）的国产系统
