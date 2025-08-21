@@ -22,3 +22,7 @@
 
 * 适用版本
     * Kylin Linux Advanced Server V10 (Sword) 银河麒麟高级服务器操作系统V10。kernel: 4.19.90
+    * 包管理为`dnf`的系统
+
+### TODO
+    * 适用于`Debian` base（apt）的国产系统

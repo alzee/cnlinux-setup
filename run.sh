@@ -8,15 +8,24 @@
 
 ############### Main Part ###############
 
+pmgr=dnf
+which apt &> /dev/null
+if [ $? = 0 ]; then
+    echo Found apt
+    pmgr=apt
+    sudo $pmgr update
+fi
+
+
 echo Install packages...
 pkgs=$(< pkgs)
-sudo dnf install -y $pkgs
+sudo $pmgr install -y $pkgs
 
 for i in pkgs:
 do
     echo Install... $i
     echo Try to get $i from repo...
-    sudo dnf install -y $i
+    sudo $pmgr install -y $i
 
     # If install from repo failed
     if [ $? != 0]; then
