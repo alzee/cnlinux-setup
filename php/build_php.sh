@@ -8,6 +8,14 @@
 
 ############### Main Part ###############
 
+tar=php-8.4.11.tar.gz
+
+tar xf $tar
+
+cd ${tar%.tar*}
+
+echo configuring php...
+
 ./configure --enable-fpm \
     --with-fpm-systemd \
     --with-mysqli=mysqlnd \

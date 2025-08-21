@@ -7,16 +7,15 @@
 ############### Functions ###############
 
 ############### Main Part ###############
+tar=screen-4.9.1.tar.gz
 
-sed 's/\([a-z]\)@opensuse/\1@@opensuse/' -i doc/screen.texinfo
+tar xf $tar
 
-./configure --prefix=/usr                   \
-            --infodir=/usr/share/info       \
-            --mandir=/usr/share/man         \
-            --disable-pam                   \
-            --enable-socket-dir=/run/screen \
-            --with-pty-group=5              \
-            --with-system_screenrc=/etc/screenrc &&
+cd ${tar%.tar*}
 
-sed -i -e "s%/usr/local/etc/screenrc%/etc/screenrc%" {etc,doc}/* &&
+echo configuring screen...
+./configure
+
 make
+
+sudo make install

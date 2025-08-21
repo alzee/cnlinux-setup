@@ -8,6 +8,13 @@
 
 ############### Main Part ###############
 
+tar=postgresql-17.6.tar.bz2
+
+tar xf $tar
+
+cd ${tar%.tar*}
+
+echo configuring postgresql
 ./configure --with-systemd
 
 make
