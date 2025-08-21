@@ -25,6 +25,7 @@ for i in pkgs:
 do
     echo Install... $i
     echo Try to get $i from repo...
+    # TODO log
     sudo $pmgr install -y $i
 
     # If install from repo failed

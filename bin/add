@@ -1,0 +1,34 @@
+#!/bin/bash
+#
+# vim:ft=sh
+
+############### Variables ###############
+
+############### Functions ###############
+
+############### Main Part ###############
+
+if [ -z "$1" ]; then
+    echo Create dir for package
+    echo Usage:
+    echo 'add <package_name>'
+    exit
+fi
+
+pkg=$1
+
+if ! grep $pkg pkgs > /dev/null; then
+    echo $pkg >> pkgs
+fi
+
+mkdir -p $pkg
+
+if [ ! -f $pkg/build.sh ]; then
+    cp bin/build.tpl $pkg/build.sh
+    sed -i "s/PACKAGENAME/$pkg/" $pkg/build.sh
+fi
+
+if [ ! -f $pkg/setup.sh ]; then
+    cp bin/setup.tpl $pkg/setup.sh
+    sed -i "s/PACKAGENAME/$pkg/" $pkg/setup.sh
+fi
