@@ -23,7 +23,8 @@ echo configuring php...
     --disable-mbregex \
     --with-readline \
     --with-pdo-pgsql \
-    --with-pgsql
+    --with-pgsql \
+    --enable-intl
 
 make -j4
 

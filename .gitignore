@@ -3,3 +3,4 @@ screen/screen-*/
 php/php-*/
 postgresql/postgresql-*/
 ash-master/
+*.swp
