@@ -22,6 +22,7 @@ echo configuring php...
     --enable-mbstring \
     --disable-mbregex \
     --with-readline \
+    --with-pdo-pgsql \
     --with-pgsql
 
 make -j4
