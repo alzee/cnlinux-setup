@@ -2,21 +2,15 @@
 #
 # vim:ft=sh
 
-############### Variables ###############
+tar=$(echo postgresql-*.tar.*)
 
-############### Functions ###############
+tar xf $tar
 
-############### Main Part ###############
+cd ${tar%.tar*}
 
-adduser -M postgres
-mkdir -p /usr/local/pgsql/data
-chown postgres /usr/local/pgsql/data
-sudo su - postgres
-/usr/local/pgsql/bin/initdb -D /usr/local/pgsql/data
-# /usr/local/pgsql/bin/pg_ctl -D /usr/local/pgsql/data -l logfile start
-# /usr/local/pgsql/bin/createdb test
-# /usr/local/pgsql/bin/psql test
+echo configuring postgresql
+./configure --with-systemd
 
-sudo cp postgresql.service /usr/lib/systemd/system/
+make
 
-sudo systemctl enable --now postgresql
+sudo make install
