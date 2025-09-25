@@ -6,5 +6,5 @@ screen
 libxml2-devel
 sqlite-devel
 libicu-devel
-php
 postgresql
+php
