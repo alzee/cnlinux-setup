@@ -8,7 +8,7 @@ After=network.target
 
 [Service]
 Type=notify
-ExecStart=/usr/loca/sbin/php-fpm --nodaemonize
+ExecStart=/usr/local/sbin/php-fpm --nodaemonize
 ExecReload=/bin/kill -USR2 $MAINPID
 PrivateTmp=true
 RuntimeDirectory=php-fpm
