@@ -3,39 +3,48 @@
 # vim:ft=sh
 
 ############### Variables ###############
+pkg=dnf
 
 ############### Functions ###############
+log() {
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" | tee -a "$2"
+}
 
 ############### Main Part ###############
-
-pmgr=dnf
 which apt &> /dev/null
 if [ $? = 0 ]; then
     echo Found apt
-    pmgr=apt
-    sudo $pmgr update
+    pkg=apt
+    sudo $pkg update
 fi
 
+mkdir -p log
 
 echo Install packages...
 pkgs=$(< pkgs)
-sudo $pmgr install -y $pkgs
+sudo $pkg install -y $pkgs
 
 for i in pkgs:
 do
     echo Install... $i
     echo Try to get $i from repo...
     # TODO log
-    sudo $pmgr install -y $i
+    sudo $pkg install -y $i
 
-    # If install from repo failed
-    if [ $? != 0]; then
+    if [ $? = 0]; then
+            log "$i installed from repo" log/install.log
+    else
         echo CAN NOT install $i from repo...
-        echo Try to build from source...
-        pushd $i 2> /dev/null || echo $i dir not found ; continue
-        echo Building $i...
-        . build.sh
-        popd
+        if [ -f $i/build.sh ]; then
+            echo Try to build from source...
+            pushd $i 2> /dev/null || echo $i dir not found ; continue
+            echo Building $i...
+            . build.sh
+            [ $? = 0] && log "$i build success" log/install.log
+            popd
+        else
+            log "$i install failed..." log/install.err.log
+        fi
     fi
 
     # Post install setup
