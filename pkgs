@@ -3,5 +3,8 @@ bison
 readline-devel
 httpd
 screen
+libxml2-devel
+sqlite-devel
+libicu-devel
 php
 postgresql
