@@ -8,19 +8,6 @@
 
 ############### Main Part ###############
 
-tar=$(echo postgresql-*.tar.*)
-
-tar xf $tar
-
-cd ${tar%.tar*}
-
-echo configuring postgresql
-./configure --with-systemd
-
-make
-
-sudo make install
-
 adduser -M postgres
 mkdir -p /usr/local/pgsql/data
 chown postgres /usr/local/pgsql/data
