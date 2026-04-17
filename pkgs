@@ -3,6 +3,7 @@ bison
 readline-devel
 httpd
 screen
+gcc-c++
 libxml2-devel
 sqlite-devel
 libicu-devel
