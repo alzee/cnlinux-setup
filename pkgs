@@ -3,9 +3,11 @@ bison
 readline-devel
 httpd
 screen
+libtool
 gcc-c++
 libxml2-devel
 sqlite-devel
 libicu-devel
+libpq-devel
 postgresql
 php
