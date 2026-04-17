@@ -25,6 +25,7 @@ echo configuring php...
     --with-pdo-pgsql \
     --with-pgsql \
     --enable-intl
+	# --with-pgsql=/usr/local/pgsql \
 
 make -j4
 
