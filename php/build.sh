@@ -27,6 +27,10 @@ echo configuring php...
     --with-openssl \
     --with-zlib \
     --with-curl \
+    --with-gd \
+    --with-zip \
+    --enable-opcache \
+    --enable-bcmath \
     --enable-intl
 	# --with-pgsql=/usr/local/pgsql \
 
