@@ -14,6 +14,8 @@ tar xf $tar
 
 cd ${tar%.tar*}
 
+# make clean
+
 echo configuring php...
 
 ./configure --enable-fpm \
@@ -29,9 +31,14 @@ echo configuring php...
     --with-curl \
     --with-zip \
     --enable-gd \
+    --with-jpeg \
+    --with-xpm \
+    --with-webp \
+    --with-freetype \
     --enable-bcmath \
     --enable-intl
-	# --with-pgsql=/usr/local/pgsql \
+    # --with-avif \
+    # --with-pgsql=/usr/local/pgsql \
     # --enable-opcache \
 
 make -j4
