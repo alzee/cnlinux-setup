@@ -9,5 +9,6 @@ libxml2-devel
 sqlite-devel
 libicu-devel
 libpq-devel
+libcurl-devel
 postgresql
 php
