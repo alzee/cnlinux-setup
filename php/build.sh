@@ -27,12 +27,12 @@ echo configuring php...
     --with-openssl \
     --with-zlib \
     --with-curl \
-    --with-gd \
     --with-zip \
-    --enable-opcache \
+    --enable-gd \
     --enable-bcmath \
     --enable-intl
 	# --with-pgsql=/usr/local/pgsql \
+    # --enable-opcache \
 
 make -j4
 
