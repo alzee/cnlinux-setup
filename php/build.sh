@@ -26,6 +26,7 @@ echo configuring php...
     --with-pgsql \
     --with-openssl \
     --with-zlib \
+    --with-curl \
     --enable-intl
 	# --with-pgsql=/usr/local/pgsql \
 
