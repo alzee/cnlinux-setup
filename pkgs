@@ -10,5 +10,6 @@ sqlite-devel
 libicu-devel
 libpq-devel
 libcurl-devel
+gd-devel
 postgresql
 php
