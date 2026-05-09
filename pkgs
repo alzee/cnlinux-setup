@@ -14,5 +14,7 @@ libzip-devel
 gd-devel
 systemd-devel
 nginx
+libatomic
 postgresql
 php
+proxychains-ng
