@@ -2,6 +2,8 @@
 #
 # vim:ft=sh
 
+set -e
+
 tar=$(echo postgresql-*.tar.*)
 
 tar xf $tar

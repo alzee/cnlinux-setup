@@ -2,6 +2,7 @@
 #
 # vim:ft=sh
 
+set -e
 
 tar=$(echo PACKAGENAME-*.tar.*)
 
