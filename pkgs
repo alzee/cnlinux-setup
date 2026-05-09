@@ -12,5 +12,6 @@ libpq-devel
 libcurl-devel
 libzip-devel
 gd-devel
+nginx
 postgresql
 php
