@@ -21,6 +21,7 @@ echo configuring php...
 ./configure --enable-fpm \
     --with-fpm-systemd \
     --with-mysqli=mysqlnd \
+    --with-pdo-mysql=mysqlnd \
     --enable-mbstring \
     --disable-mbregex \
     --with-readline \
