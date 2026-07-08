@@ -84,7 +84,7 @@ do
         pushd $i 2> /dev/null || { echo $i dir not found ; continue; }
         echo Building $i...
         . build.sh
-        [ $? = 0] && log "$i build success" b_success
+        [ $? = 0 ] && log "$i build success" b_success
         popd
     fi
 
