@@ -10,8 +10,12 @@ tar xf $tar
 
 cd ${tar%.tar*}
 
+make distclean
+
 echo configuring postgresql
-./configure --with-systemd
+./configure \
+    --with-ssl=openssl \
+    --with-systemd
 
 make
 
