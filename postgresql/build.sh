@@ -11,7 +11,7 @@ tar xf $tar
 
 cd ${tar%.tar*}
 
-make distclean
+# make distclean
 
 echo configuring postgresql
 ./configure \
