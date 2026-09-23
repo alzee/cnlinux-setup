@@ -1,6 +1,7 @@
 #!/bin/bash
 #
 # vim:ft=sh
+# https://www.postgresql.org/ftp/source/
 
 set -e
 
