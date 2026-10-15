@@ -1,7 +1,6 @@
 flex
 bison
 readline-devel
-httpd
 screen
 libtool
 gcc-c++
